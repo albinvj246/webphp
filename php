@@ -21,6 +21,7 @@ x=int(a.get())
     for i in range(1,x+1):
         n=n*i
     m.config(text="factorial %d"%n)
+     
 n=int(input("enter the no of elements"))
 l=[]
 for i in range(0,n):
@@ -36,3 +37,28 @@ for i in range(0,n):
     ls.append(l[t])
     t=t-1
 print(ls)
+
+
+n=(input("enter string"))
+x=n.upper()
+for i in range(65,91,1):
+    c=x.count(chr(i))
+    if(c!=0):
+        print(c,chr(i))
+
+n = input("Enter string: ")
+n = n.upper()
+x = n.split()
+for i in x:
+    if len(i) > 3:
+        print(i[0], end='')
+
+n = input("Enter string: ")
+z = n.replace(" ", "")
+c = len(z)
+print("Result:")
+for i in range(1, c, 2):
+    print(z[i], end='')
+print()
+for i in range(-1,-c-1, -2):
+    print(z[i], end='')
