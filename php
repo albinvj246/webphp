@@ -1,57 +1,38 @@
-//search
+ x=int(a.get())
+    p = [0, 1]
+    for i in range(2, x):
+        y = p[i-1] + p[i-2]
+        p.append(y)
+    m.config(text="fibonacci {}".format(p))
 
-<?php
-$conn = mysqli_connect("localhost", "root", "", "details");
+ x = int(a.get())
+    if x < 2:
+        m.config(text="%d is not prime" % x)
+    else:
+        for i in range(2, int(x**0.5) + 1):
+            if x % i == 0:
+                m.config(text="%d is not prime" % x)
+                break
+        else:
+            m.config(text="%d is prime" % x)
 
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-?>
-<form action="#" method="POST">
-    name : <input type="text" name="namee">
-    <input type="submit" value="submit">
-</form>
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $namee = $_POST['namee'];
-    
-    $sql = "SELECT * FROM details WHERE namee LIKE '%$namee%'";
-    $result = mysqli_query($conn, $sql);
-
-    if ($result) {
-        while ($row = $result->fetch_assoc()) {
-            echo $row['namee'] . ", " . $row['email'] . ", " . $row['phonenumber'] . ", " . $row['addresss'] . "<br>";
-        }
-    } else {
-        echo "Error: " . mysqli_error($conn);
-    }
-}
-
-mysqli_close($conn);
-?>
-
-
-//database connection
-<?php
-$conn = mysqli_connect("localhost","root","","details");
-if(!$conn){
-    die("connection failed".mysqli_connect_error());
-}
-$nam=$_POST['namee'];
-$email=$_POST['email'];
-$phonenumber=$_POST['phonenumber'];
-$add=$_POST['addresss'];
-
-$sql= "INSERT INTO details (namee,email,phonenumber,addresss) values ('$nam','$email','$phonenumber','$add')";
-if(mysqli_query($conn,$sql))
-{
-    echo "information successfully added";
-    ?><a href="phpp.html">enter/search</a><?php
-}
-else
-{
-    echo "error". mysqli_error($conn);
-}
-mysqli_close($conn);
-?>
+x=int(a.get())
+    n=1
+    for i in range(1,x+1):
+        n=n*i
+    m.config(text="factorial %d"%n)
+n=int(input("enter the no of elements"))
+l=[]
+for i in range(0,n):
+    x=int(input("enter the number"))
+    l.append(x)
+for i in range(0,n-1):
+    for j in range(0,n-i-1):
+        if(l[j]>l[j+1]):
+            l[j],l[j+1]=l[j+1],l[j]
+ls=[]
+t=-1
+for i in range(0,n):
+    ls.append(l[t])
+    t=t-1
+print(ls)
