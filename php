@@ -62,3 +62,8 @@ for i in range(1, c, 2):
 print()
 for i in range(-1,-c-1, -2):
     print(z[i], end='')
+
+for i in range (6):
+    for j in range(1,r+1)://5,0,-1//range(r,0,-1)
+        print(c, end=' ')//number=number+-1//print(i*2)
+    print()
